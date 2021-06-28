@@ -52,7 +52,7 @@ def dump_flops_info(model, inputs, output_dir, use_eval_mode=True):
     except Exception:
         logger.exception("Failed to estimate flops using mobile_cv's FlopsEstimation")
 
-
+    flops = None
     # 2. using d2/fvcore's flop counter
     try:
         flops = FlopCountAnalysis(model, inputs)
